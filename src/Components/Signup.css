@@ -1,39 +1,103 @@
 body {
-    background: rgb(178,164,185);
-background: radial-gradient(circle, rgba(178,164,185,1) 0%, rgba(70,32,83,1) 100%);
+  background-color: black;
 }
 
 .container {
   display: flex;
   flex-direction: column;
- 
+  width: -moz-fit-content;
   width: fit-content;
   align-items: center;
   margin: auto;
+  box-shadow: 1px 1px 12px 5px darkslateblue;
+  border-radius: 11px;
+  transition: transform 0.5s;
+  margin-top: 45px;
+
+  background: linear-gradient(
+    65deg,
+    hsl(318deg 100% 49%) 0%,
+    hsl(324deg 94% 61%) 2%,
+    hsl(328deg 94% 66%) 3%,
+    hsl(332deg 92% 71%) 5%,
+    hsl(335deg 88% 74%) 7%,
+    hsl(331deg 82% 73%) 10%,
+    hsl(328deg 77% 72%) 13%,
+    hsl(324deg 71% 71%) 16%,
+    hsl(319deg 65% 70%) 21%,
+    hsl(287deg 40% 67%) 25%,
+    hsl(254deg 35% 68%) 31%,
+    hsl(226deg 28% 63%) 39%,
+    hsl(213deg 19% 57%) 49%,
+    hsl(222deg 34% 62%) 63%,
+    hsl(238deg 44% 69%) 79%,
+    hsl(264deg 57% 70%) 92%,
+    hsl(292deg 61% 67%) 100%
+  );
 }
 
+.container:hover {
+  transform: scale(1.1);
+}
 .Headdiv {
   display: contents;
 }
 
+h1 {
+  font-size: calc(1.375rem + 1.5vw);
+  font-family: auto;
+}
+
+.headpara {
+  margin-top: auto;
+  color:greenyellow;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+tr {
+  display: flex;
+
+  flex-direction: column;
+  align-items: center;
+}
+
+input {
+  padding: 4px 43px;
+  background-color: #141619;
+  border-radius: 10px;
+  border: none;
+  color: aliceblue;
+  box-shadow: 0px 0px 12px #495057;
+}
+
+.battondiv {
+  margin: auto;
+}
+
+.btn-group-sm > .btn,
+.btn-sm {
+  --bs-btn-padding-y: 0.25rem;
+  --bs-btn-padding-x: 0.5rem;
+  --bs-btn-font-size: 0.875rem;
+  --bs-btn-border-radius: 0.25rem;
+  color: aliceblue;
+  width: 150px;
+  margin: 12px;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  color: black;
+  font-family: auto;
+}
+
 p{
-    margin-top: auto;
-}
-
-form{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-}
-
-tr{
-   
-   display: flex;
-    margin-top: 13px;
-    flex-direction: column;
-    align-items: center;
-}
-
-input{
-    padding: 10px 50px;
+  color: maroon;
 }

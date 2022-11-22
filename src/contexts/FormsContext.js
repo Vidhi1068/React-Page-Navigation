@@ -1,34 +1,19 @@
-import React, { createContext, useContext, useState } from 'react'
+import React, { createContext, useContext, useState } from "react";
 
+const Maincontext = createContext();
 
- const Maincontext= createContext();
-
-
-export default function FormsContext({children}) {
-
-    const[fname,setFname]=useState();
-    const[lname,setLname]=useState();
-     const [age, setAge] = useState();
-      const [mobileno, setMobileno] = useState();
-       const [username, setUsername] = useState();
-        const [passward, setPassward] = useState();
+export default function FormsContext({ children }) {
+  const [Alldata, setAlldata] = useState({});
+  const [error, setError] = useState(false);
 
   return (
     <div>
       <Maincontext.Provider
         value={{
-          fname,
-          setFname,
-          lname,
-          setLname,
-          age,
-          setAge,
-          mobileno,
-          setMobileno,
-          username,
-          setUsername,
-          passward,
-          setPassward,
+          Alldata,
+          setAlldata,
+          error,
+          setError,
         }}
       >
         {children}

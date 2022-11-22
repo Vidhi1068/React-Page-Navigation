@@ -1,0 +1,32 @@
+.containerlogin {
+  background-color: #450dfd24;
+  display: flex;
+  flex-direction: column;
+  width: -moz-fit-content;
+  width: 40%;
+  align-items: center;
+  margin: auto;
+  box-shadow: 1px 1px 12px 5px darkslateblue;
+  border-radius: 11px;
+  transition: transform 0.5s;
+  margin-top: 45px;
+  color: aliceblue;
+      font-family: auto;
+}
+
+.containerlogin:hover{
+     transform: scale(1.1)
+}
+
+.Headdivlogin {
+  margin: 10px;
+}
+
+.logintr{
+    margin: 10px;
+}
+
+.battondivlogin{
+  margin: auto;
+}
+
