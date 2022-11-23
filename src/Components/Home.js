@@ -6,9 +6,13 @@ export default function Home() {
   return (
     <>
       <div>
-        <nav className="navbar navbar-expand-lg navbar-light bg-light">
+        <nav className="navbar navbar-expand-lg navbar-light bg-dark">
           <Link className="navbar-brand" to="#">
-            Navbar
+            <img
+              src="/imgs/logo-2.png"
+              alt="tecblic-logo"
+            />
+           
           </Link>
           <button
             className="navbar-toggler"

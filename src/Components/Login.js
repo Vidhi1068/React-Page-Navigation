@@ -1,24 +1,31 @@
 import React from "react";
 import "./Login.css";
 import { useStateContext } from "../contexts/FormsContext";
+import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 
 export default function Login() {
+  const { usersdata } = useStateContext();
+  const navigate = useNavigate();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
 
-  const { Alldata, setAlldata } = useStateContext();
+  const onSubmit = (Logindata) => {
+    console.log("login-data", Logindata);
+    console.log("datafromsignup", usersdata);
 
-   const handleChange = (e) => {
-    
-     const name = e.target.name;
-     const value = e.target.value;
-     console.log(name, value);
-     setAlldata({ ...Alldata, [name]: value });
-   };
+    const vidhi = usersdata.filter(
+      (ele) =>
+        ele?.UserName === Logindata?.UserName &&
+        ele?.Passward === Logindata?.Passward
+    );
+    console.log("matches values", vidhi[0].UserName,vidhi[0].Passward);
 
-   const submit = () => {
-     console.log("Alldata", Alldata);
-     
-   };
-
+    navigate("/Deshboard");
+  };
 
   return (
     <div>
@@ -27,41 +34,47 @@ export default function Login() {
           <h4>Log in to Your Account</h4>
         </div>
         <div className="formdivlogin">
-          <form>
-            <tr className="logintr">
+          <form onSubmit={handleSubmit(onSubmit)}>
+            <tr>
               <label>
+                UserName
                 <input
+                  {...register("UserName", {
+                    required: " *UserName is required",
+                  })}
+                  name="UserName"
                   type="text"
-                  placeholder="Enter Your UserName"
-                  name="login_username"
-                  value={Alldata.UserName}
-                  onChange={handleChange}
+                  placeholder="UserName"
                 ></input>
+                {errors.UserName && <p>{errors.UserName.message}</p>}
               </label>
             </tr>
 
-            <tr className="logintr">
+            <tr>
               <label>
+                Passward
                 <input
+                  {...register("Passward", {
+                    required: " *Password is required",
+                    maxLength: {
+                      value: 8,
+                      message: "*valid length is 8",
+                    },
+                  })}
+                  name="Passward"
                   type="password"
-                  placeholder="Enter Your Passward"
-                  name="login_password"
-                  value={Alldata.Passward}
-                  onChange={handleChange}
+                  placeholder="Passward"
                 ></input>
+                {errors.Passward && <p>{errors.Passward.message}</p>}
               </label>
             </tr>
-          <div className="battondivlogin">
-            <button
-              type="button"
-              class="btn btn-sm btn-success"
-              onClick={submit}
-            >
-              Login
-            </button>
-          </div>
-          </form>
 
+            <div className="battondivlogin">
+              <button type="submit" class="btn btn-sm btn-success">
+                Login
+              </button>
+            </div>
+          </form>
         </div>
       </div>
     </div>

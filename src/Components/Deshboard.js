@@ -1,9 +1,15 @@
 import React from 'react'
 import "./Deshboard.css"
-export default function Deshboard() {
+export default function Deshboard(){
+  
   return (
-    <div>
-      <p className='dashboard'>login successfully</p>
-    </div>
-  )
+    <>
+      <div className="maindiv">
+        <h1 className='h1desh'>Welcome to DeshBoard</h1>
+        {/* <p className="dashboard">login successfully</p> */}
+      </div>
+    </>
+  );
 }
+
+                                                                      

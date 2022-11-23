@@ -4,7 +4,8 @@ body {
 
 .container {
   display: flex;
-  flex-direction: column;
+ 
+  flex-direction: row-reverse;
   width: -moz-fit-content;
   width: fit-content;
   align-items: center;
@@ -12,8 +13,7 @@ body {
   box-shadow: 1px 1px 12px 5px darkslateblue;
   border-radius: 11px;
   transition: transform 0.5s;
-  margin-top: 45px;
-
+  margin-top: 35px;
   background: linear-gradient(
     65deg,
     hsl(318deg 100% 49%) 0%,
@@ -34,13 +34,17 @@ body {
     hsl(264deg 57% 70%) 92%,
     hsl(292deg 61% 67%) 100%
   );
+  justify-content: space-evenly;
+  flex-wrap: wrap;
 }
 
 .container:hover {
   transform: scale(1.1);
 }
 .Headdiv {
-  display: contents;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 h1 {
@@ -50,7 +54,7 @@ h1 {
 
 .headpara {
   margin-top: auto;
-  color:greenyellow;
+  color: greenyellow;
 }
 
 form {
@@ -98,6 +102,12 @@ label {
   font-family: auto;
 }
 
-p{
-  color: maroon;
+p {
+  color: rgb(177, 25, 25);
+  display:contents;
+}
+
+.signuppic {
+    vertical-align: middle;
+    width: 97%;
 }
