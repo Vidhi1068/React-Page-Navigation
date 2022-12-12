@@ -4,7 +4,7 @@ body {
 
 .container {
   display: flex;
- 
+
   flex-direction: row-reverse;
   width: -moz-fit-content;
   width: fit-content;
@@ -104,10 +104,14 @@ label {
 
 p {
   color: rgb(177, 25, 25);
-  display:contents;
+  display: contents;
 }
 
 .signuppic {
-    vertical-align: middle;
-    width: 97%;
+  vertical-align: middle;
+  width: 97%;
+}
+
+.mobinput::-webkit-inner-spin-button,.mobinput::-webkit-outer-spin-button {
+  appearance: none;
 }

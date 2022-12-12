@@ -22,17 +22,20 @@ export default function Signup() {
 
   const {
     register,
+    setValue,
     handleSubmit,
     formState: { errors },
   } = useForm();
 
-
   const onSubmit = (data) => {
     console.log("react-hook-form", data);
-    setUsersdata(prev=>[...prev,data]);
+    setUsersdata((prev) => [...prev, data]);
     console.log("checkdata==>", usersdata);
     navigate("/Login");
   };
+
+  /*include function will check if the input feild key is present in array or not
+   if preasent return true otherwise false*/
 
   return (
     <>
@@ -109,9 +112,7 @@ export default function Signup() {
                 <label>
                   MobileNo
                   <input
-
-                 
-                    
+                    className="mobinput"
                     {...register("MobileNo", {
                       required: "*MobileNo is required",
                       pattern: {
@@ -131,9 +132,13 @@ export default function Signup() {
                       },
                     })}
                     name="MobileNo"
-                    type="text"
+                    type="number"
+                    onKeyDown={(e) =>
+                      ["e", "E", "+", "-"].includes(e.key) && e.preventDefault()
+                    }
                     placeholder="MobileNo"
                     onChange={handleChange}
+                    onWheel={(event) => event.currentTarget.blur()}
                   />
                   {errors.MobileNo && <p>{errors.MobileNo.message}</p>}
                 </label>
